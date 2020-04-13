@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { StatusBar } from 'react-native'
 
 import AmbienceScreen from './src/pages/AmbienceScreen'
 import CameraScreen from './src/pages/CameraScreen'
@@ -19,6 +20,7 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
+      <StatusBar backgroundColor="transparent" translucent barStyle="light-content" />
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="InfoScreen" component={InfoScreen} />
