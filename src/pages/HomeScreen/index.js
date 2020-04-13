@@ -1,19 +1,18 @@
 import React from 'react';
-import { View, FlatList, Text, TouchableOpacity } from 'react-native';
-// import Icons from 'react-native-vector-icons/EvilIcons'
+import { View } from 'react-native';
+import Icon from 'react-native-vector-icons/Entypo'
 
-import styles from './styles'
+
+import { Container, Title } from './styles';
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <TouchableOpacity>
-          {/* <Icons name="ei-archive" /> */}
-        </TouchableOpacity>
+    <Container >
+      <View>
+        <Title>Projetos</Title>
 
+        <Icon name="500px" size={22} color="#000" />
       </View>
-    </View>
-    
+    </Container>
   );
 }
