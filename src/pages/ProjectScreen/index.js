@@ -18,7 +18,7 @@ export default function ProjectScreen() {
   }
 
   function navigateToAmbience() {
-    navigation.navigate('Ambience')
+    navigation.navigate('AmbienceScreen')
   }
 
   return (
@@ -49,7 +49,7 @@ export default function ProjectScreen() {
       data={[1,2, 3]}
       keyExtractor={item => String(item)}
       renderItem={({ item }) =>  (
-        <RoomSpace>
+        <RoomSpace onPress={navigateToAmbience}>
           <TitleAmbience>Sala de estar</TitleAmbience>
           <Room source={defaultRoomImg} />
         </RoomSpace>
