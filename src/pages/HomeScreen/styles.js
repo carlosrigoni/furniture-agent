@@ -8,7 +8,7 @@ export const Container = styled(LinearGradient).attrs({
   end: { x: 1, y: 1 },
 })`
   flex: 1;
-  padding-top: ${30 + getStatusBarHeight(true)}
+  padding-top: ${30 + getStatusBarHeight(true)}px
 `;
 
 export const Title = styled.Text`
