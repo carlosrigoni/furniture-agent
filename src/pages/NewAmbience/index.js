@@ -40,7 +40,7 @@ export default function NewProject() {
 
         <Input
           autoCorrect={false}
-          placeholder="Nome do ambiente"
+          placeholder="Nome do ambiente:"
         />
 
         <ButtonGetImage onPress={getImage}>

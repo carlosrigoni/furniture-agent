@@ -11,17 +11,17 @@ export default function NewProject() {
         <InputHeader>
           <Input
             autoCorrect={false}
-            placeholder="Nome do Projeto"
+            placeholder="Nome do Projeto:"
           />
           <Input
             autoCorrect={false}
-            placeholder="Nome do Cliente"
+            placeholder="Nome do Cliente:"
           />
         </InputHeader>
 
         <Input
           autoCorrect={false}
-          placeholder="Endereco"
+          placeholder="Endereco:"
         />
 
         <Button>
