@@ -45,7 +45,7 @@ export const Input = styled.TextInput`
 
 export const Button = styled.TouchableOpacity`
   background-color: #3870FF;
-  width: 320px;
+  width: 100%;
   height: 42px;
   margin-top: 20px;
   border-radius: 6px;
