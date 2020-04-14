@@ -8,7 +8,7 @@ export const Container = styled(LinearGradient).attrs({
   end: { x: 1, y: 1 },
 })`
   flex: 1;
-  padding-top: ${30 + getStatusBarHeight(true)}
+  padding-top: ${30 + getStatusBarHeight(true)}px
 `;
 
 export const Title = styled.Text`
@@ -47,7 +47,7 @@ export const Button = styled.TouchableOpacity`
   background-color: #3870FF;
   width: 100%;
   height: 42px;
-  margin-top: 20px;
+  margin-top: 10px;
   border-radius: 6px;
 
 `;

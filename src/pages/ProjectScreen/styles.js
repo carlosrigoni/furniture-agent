@@ -8,7 +8,7 @@ export const Container = styled(LinearGradient).attrs({
   end: { x: 1, y: 1 },
 })`
   flex: 1;
-  padding-top: ${30 + getStatusBarHeight(true)}
+  padding-top: ${30 + getStatusBarHeight(true)}px
 `;
 
 export const Title = styled.Text`
@@ -31,6 +31,7 @@ export const ProjectContainer = styled.View`
   margin-right: 19px;
   border-radius: 4px;
   padding: 20px;
+  margin-bottom: 15px;
 
 `;
 
@@ -57,12 +58,10 @@ export const List = styled.FlatList.attrs({
   contentContainerStyle: { paddingHorizontal: 20 },
   showsVerticalScrollIndicator: false,
 })`
-  margin-top: 10px;
 
 `;
 
 export const RoomSpace = styled.TouchableOpacity`
-  margin-top: 10px;
   margin-bottom: 15px;
   border-radius: 4px;
   width: 100%;
