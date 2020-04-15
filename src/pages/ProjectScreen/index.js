@@ -43,13 +43,13 @@ export default function ProjectScreen() {
           <Date>02/11/2020</Date>
         </ListHeader>
 
+        <ProjectText>Carlos Daniel Rigoni</ProjectText>
         <ListHeader>
-          <ProjectText>Carlos Daniel Rigoni</ProjectText>
+          <ProjectText>Rua Joao Marciano</ProjectText>
           <TouchableOpacity>
             <EvilIcons name="trash" size={28} color="#444"/>
           </TouchableOpacity>
         </ListHeader>
-        <ProjectText>Rua Joao Marciano</ProjectText>
       </ProjectContainer>
 
       <List
