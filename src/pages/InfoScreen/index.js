@@ -1,16 +1,22 @@
 import React from 'react';
 import { Text, View, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
+import AntDesign from 'react-native-vector-icons/AntDesign'
+
+import { ButtonComeBack } from './styles'
 
 export default function InfoScreen() {
   const navigation = useNavigation()
 
   function navigateToHome() {
-      navigation.navigate('Home')
+      navigation.navigate('HomeScreen')
     }
 
   return (
     <View style={{flex: 1}}>
+      <ButtonComeBack onPress={navigateToHome}>
+          <AntDesign name="left" size={22} color="#fff" />
+        </ButtonComeBack>
       <Image
       style={{flex: 1}}
         source={{

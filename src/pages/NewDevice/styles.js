@@ -11,6 +11,14 @@ export const Container = styled(LinearGradient).attrs({
   padding-top: ${30 + getStatusBarHeight(true)}px
 `;
 
+export const ButtonComeBack = styled.TouchableOpacity`
+  position: absolute;
+  padding-top: ${25 + getStatusBarHeight(true)}px;
+  z-index: 1;
+
+
+`;
+
 export const Title = styled.Text`
   margin-top: 160px;
   text-align: center;

@@ -1,15 +1,24 @@
 import React, { useState } from 'react';
 import {Picker} from '@react-native-community/picker';
+import AntDesign from 'react-native-vector-icons/AntDesign'
+import { useNavigation } from '@react-navigation/native'
 
-
-import { Container, Title, Form, Input, Button, TextSubmit, InputHeader } from './styles';
+import { Container, ButtonComeBack, Title, Form, Input, Button, TextSubmit, InputHeader } from './styles';
 
 export default function NewProject() {
-  const [type, setType] = useState('Tipo')
+  const navigation = useNavigation()
 
+  function navigateToAmbience() {
+      navigation.navigate('AmbienceScreen')
+    }
+
+  const [type, setType] = useState('Tipo')
 
   return (
     <Container>
+        <ButtonComeBack onPress={navigateToAmbience}>
+          <AntDesign name="left" size={22} color="#fff" />
+        </ButtonComeBack>
         <Title>Adicionar dispositivo Scenario</Title>
       <Form>
 

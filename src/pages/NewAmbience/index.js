@@ -1,10 +1,18 @@
 import React from 'react';
 import ImagePicker from 'react-native-image-picker';
 import defaultRoomImg from '../../assets/default-room.jpg'
+import { useNavigation } from '@react-navigation/native'
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
-import { Container, Title, Form, Input, Button, TextSubmit, ButtonGetImage, Room, TextImage } from './styles';
+import { Container, ButtonComeBack, Title, Form, Input, Button, TextSubmit, ButtonGetImage, Room, TextImage } from './styles';
 
 export default function NewProject() {
+  const navigation = useNavigation()
+
+  function navigateToProject() {
+      navigation.navigate('ProjectScreen')
+    }
+
   const options = {
     title: 'Selecione uma foto do ambiente',
     storageOptions: {
@@ -35,6 +43,9 @@ export default function NewProject() {
 
   return (
     <Container>
+        <ButtonComeBack onPress={navigateToProject}>
+          <AntDesign name="left" size={22} color="#fff" />
+        </ButtonComeBack>
         <Title>Criar novo ambiente</Title>
       <Form>
 

@@ -55,6 +55,7 @@ export const List = styled.FlatList.attrs({
   contentContainerStyle: { paddingHorizontal: 20 },
   showsVerticalScrollIndicator: false,
 })`
+  left: 14px;
 
 `;
 
@@ -75,7 +76,16 @@ export const DeviceId = styled.Text`
 `;
 
 export const TrashButton = styled.TouchableOpacity`
-  bottom: 6px;
+  bottom: 1px;
+  right: 20px;
+
+`;
+
+export const ButtonComeBack = styled.TouchableOpacity`
+  position: absolute;
+  padding-top: ${25 + getStatusBarHeight(true)}px;
+  z-index: 1;
+
 
 `;
 

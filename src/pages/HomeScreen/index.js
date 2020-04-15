@@ -1,6 +1,7 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/Entypo'
+import Entypo from 'react-native-vector-icons/Entypo'
+import AntDesign from 'react-native-vector-icons/AntDesign'
 import { useNavigation } from '@react-navigation/native'
 
 import { Container, Title, Header, List, ListContainer, ListHeader, Date, NameProject, NameCliente, Address } from './styles';
@@ -25,13 +26,13 @@ export default function HomeScreen() {
     <Container >
       <Header >
         <TouchableOpacity onPress={navigateToInfo}>
-          <Icon name="500px" size={22} color="#000" />
+          <AntDesign name="infocirlce" size={22} color="#fff" />
         </TouchableOpacity>
 
         <Title>Scenario</Title>
 
         <TouchableOpacity onPress={navigateToNewProject}>
-          <Icon name="500px" size={22} color="#000" />
+          <Entypo name="add-to-list" size={22} color="#fff"/>
         </TouchableOpacity>
       </Header>
 

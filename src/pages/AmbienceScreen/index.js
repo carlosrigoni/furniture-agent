@@ -1,12 +1,17 @@
 import React from 'react';
 import defaultRoomImg from '../../assets/default-room.jpg'
-import Icon from 'react-native-vector-icons/Entypo'
 import { useNavigation } from '@react-navigation/native'
+import EvilIcons from 'react-native-vector-icons/EvilIcons'
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
-import { Container, Header, Room, Title, ButtonsAdd, ButtonAdd, TextButton, List, DeviceContainer, DeviceText, DeviceId, TrashButton } from './styles';
+import { Container, Header, ButtonComeBack, Room, Title, ButtonsAdd, ButtonAdd, TextButton, List, DeviceContainer, DeviceText, DeviceId, TrashButton } from './styles';
 
 export default function AmbienceScreen() {
   const navigation = useNavigation()
+
+  function navigateToProject() {
+    navigation.navigate('ProjectScreen')
+  }
 
 
   function navigateToNewDevice() {
@@ -21,6 +26,9 @@ export default function AmbienceScreen() {
   return (
     <Container>
       <Header>
+      <ButtonComeBack onPress={navigateToProject}>
+          <AntDesign name="left" size={22} color="#fff" />
+        </ButtonComeBack>
       <Room source={defaultRoomImg} />
       <Title>SALA DE ESTAR</Title>
       </Header>
@@ -43,7 +51,7 @@ export default function AmbienceScreen() {
           <DeviceText>Google Alexa -  FAB GOOGLE</DeviceText>
           <DeviceId>id: 46473</DeviceId>
           <TrashButton>
-            <Icon name="500px" size={22} color="#fff" />
+            <EvilIcons name="trash" size={28} color="#fff"/>
           </TrashButton>
         </DeviceContainer>
 

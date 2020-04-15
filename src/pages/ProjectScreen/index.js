@@ -1,6 +1,8 @@
 import React from 'react';
 import { TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons/Entypo'
+import AntDesign from 'react-native-vector-icons/AntDesign'
+import Entypo from 'react-native-vector-icons/Entypo'
+import EvilIcons from 'react-native-vector-icons/EvilIcons'
 import { useNavigation } from '@react-navigation/native'
 import defaultRoomImg from '../../assets/default-room.jpg'
 
@@ -25,22 +27,28 @@ export default function ProjectScreen() {
     <Container>
       <Header >
         <TouchableOpacity onPress={navigateToHome}>
-          <Icon name="500px" size={22} color="#000" />
+          <AntDesign name="left" size={22} color="#fff" />
         </TouchableOpacity>
 
         <Title>Scenario</Title>
 
         <TouchableOpacity onPress={navigateToNewAmbience}>
-          <Icon name="500px" size={22} color="#000" />
+          <Entypo name="add-to-list" size={22} color="#fff"/>
         </TouchableOpacity>
       </Header>
 
       <ProjectContainer>
         <ListHeader>
-        <ProjectText>Novo apartamento</ProjectText>
-        <Date>02/11/2020</Date>
+          <ProjectText>Novo apartamento</ProjectText>
+          <Date>02/11/2020</Date>
         </ListHeader>
-        <ProjectText>Carlos Daniel Rigoni</ProjectText>
+
+        <ListHeader>
+          <ProjectText>Carlos Daniel Rigoni</ProjectText>
+          <TouchableOpacity>
+            <EvilIcons name="trash" size={28} color="#444"/>
+          </TouchableOpacity>
+        </ListHeader>
         <ProjectText>Rua Joao Marciano</ProjectText>
       </ProjectContainer>
 

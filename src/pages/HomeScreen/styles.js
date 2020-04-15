@@ -21,6 +21,9 @@ export const Title = styled.Text`
 export const Header = styled.View`
   flex-direction: row;
   justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+
 
 `;
 
