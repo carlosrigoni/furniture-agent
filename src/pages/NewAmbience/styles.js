@@ -34,7 +34,8 @@ export const Form = styled.View`
   margin-left: 15px;
   margin-right: 15px;
   border-radius: 4px;
-  padding: 20px;dfkfs
+  padding: 20px;
+  border: 3px solid ${props => props.error ? '#FF7272' : '#FFF'};
 
 
 

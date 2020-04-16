@@ -1,26 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { TouchableOpacity} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Entypo from 'react-native-vector-icons/Entypo'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
 import defaultRoomImg from '../../assets/default-room.jpg'
+import getRealm from '~/services/realm'
+
 
 import { Container, Title, Header,ProjectContainer, ListHeader, ProjectText, Date, List, TitleAmbience, Room, RoomSpace} from './styles';
 
 export default function ProjectScreen() {
+  const [ambiences, setAmbiences] = useState([])
+
+  useEffect(() => {
+    async function loadRepositories() {
+      const realm = await getRealm()
+
+      const data = realm.objects('Ambiente').sorted('id', true)
+
+      setAmbiences(data)
+      console.log('here');
+    }
+    loadRepositories()
+  }, [route])
+
+
   const navigation = useNavigation()
+  const route = useRoute()
+  const project = route.params.project
 
   function navigateToHome() {
     navigation.navigate('HomeScreen')
   }
 
-  function navigateToNewAmbience() {
-    navigation.navigate('NewAmbience')
+  function navigateToNewAmbience(projectId) {
+    navigation.navigate('NewAmbience', { projectId })
   }
 
   function navigateToAmbience() {
-    navigation.navigate('AmbienceScreen')
+    navigation.navigate('AmbienceScreen', )
   }
 
   return (
@@ -32,20 +51,20 @@ export default function ProjectScreen() {
 
         <Title>Scenario</Title>
 
-        <TouchableOpacity onPress={navigateToNewAmbience}>
+        <TouchableOpacity onPress={() => navigateToNewAmbience(project.id)}>
           <Entypo name="add-to-list" size={22} color="#fff"/>
         </TouchableOpacity>
       </Header>
 
       <ProjectContainer>
         <ListHeader>
-          <ProjectText>Novo apartamento</ProjectText>
-          <Date>02/11/2020</Date>
+          <ProjectText>{project.nomeProjeto}</ProjectText>
+          <Date>12/6/2020</Date>
         </ListHeader>
 
-        <ProjectText>Carlos Daniel Rigoni</ProjectText>
+        <ProjectText>{project.nomeCliente}</ProjectText>
         <ListHeader>
-          <ProjectText>Rua Joao Marciano</ProjectText>
+        <ProjectText>{project.endereco}</ProjectText>
           <TouchableOpacity>
             <EvilIcons name="trash" size={28} color="#444"/>
           </TouchableOpacity>
@@ -54,11 +73,11 @@ export default function ProjectScreen() {
 
       <List
       keyboardShouldPersistTaps="handled"
-      data={[1,2, 3]}
-      keyExtractor={item => String(item)}
+      data={ambiences}
+      keyExtractor={item => String(item.id)}
       renderItem={({ item }) =>  (
         <RoomSpace onPress={navigateToAmbience}>
-          <TitleAmbience>Sala de estar</TitleAmbience>
+          <TitleAmbience>{item.nome}</TitleAmbience>
           <Room source={defaultRoomImg} />
         </RoomSpace>
 

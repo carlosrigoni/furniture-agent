@@ -1,13 +1,12 @@
 export default class AmbienceSchema {
   static schema = {
-    name: 'Ambience',
+    name: 'Ambiente',
     primaryKey: 'id',
     properties: {
       id: { type: 'int', indexed: true },
-      nameProject: 'string',
-      nameClient: 'string',
-      adress: 'string',
-      // dataAtualizacao: 'date',
-    },
+      projetoId: 'int',
+      nome: 'string',
+    }
+
   }
 }

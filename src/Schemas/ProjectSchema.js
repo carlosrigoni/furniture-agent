@@ -1,13 +1,13 @@
 export default class ProjectSchema {
   static schema = {
-    name: 'Project',
+    name: 'Projeto',
     primaryKey: 'id',
     properties: {
       id: { type: 'int', indexed: true },
-      nameProject: 'string',
-      nameClient: 'string',
-      adress: 'string',
-      // dataAtualizacao: 'date',
-    },
+      nomeProjeto: 'string',
+      nomeCliente: 'string',
+      endereco: 'string',
+    }
+
   }
 }

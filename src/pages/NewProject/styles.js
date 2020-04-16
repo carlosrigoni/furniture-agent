@@ -32,9 +32,7 @@ export const Form = styled.View`
   margin-right: 15px;
   border-radius: 4px;
   padding: 20px;
-
-
-
+  border: 3px solid ${props => props.error ? '#FF7272' : '#FFF'};
 `;
 
 export const InputHeader = styled.View`
@@ -44,7 +42,6 @@ export const InputHeader = styled.View`
 
 export const Input = styled.TextInput`
   font-size: 14px;
-
 `;
 
 

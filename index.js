@@ -1,4 +1,5 @@
 import 'react-native-gesture-handler';
+require('react-native').unstable_enableLogBox()
 /**
  * @format
  */
@@ -8,3 +9,4 @@ import App from './App';
 import {name as appName} from './app.json';
 
 AppRegistry.registerComponent(appName, () => App);
+
