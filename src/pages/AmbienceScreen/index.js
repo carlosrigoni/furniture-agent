@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import defaultRoomImg from '../../assets/default-room.jpg'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
 import AntDesign from 'react-native-vector-icons/AntDesign'
+import getRealm from '~/services/realm'
 
-import { Container, Header, ButtonComeBack, Room, Title, ButtonsAdd, ButtonAdd, TextButton, List, DeviceContainer, DeviceText, DeviceId, TrashButton } from './styles';
+import { Container, Header, ButtonComeBack, Room, Title, ButtonsAdd, ButtonAdd, TextButton, List, DeviceContainer, DeviceText, DeviceId, TrashButton} from './styles';
 
 export default function AmbienceScreen() {
+  const route = useRoute()
+  const ambience = route.params.ambience
+
+  const [devices, setDevices] = useState([])
+
+  useEffect(() => {
+    async function loadRepositories() {
+      const realm = await getRealm()
+
+      const data = realm.objects('Device').sorted('id', true).filtered(`ambienceId = ${ambience.id}`)
+
+      setDevices(data)
+      console.log('here');
+    }
+    loadRepositories()
+  }, [route])
+
   const navigation = useNavigation()
 
   function navigateToProject() {
@@ -15,11 +33,11 @@ export default function AmbienceScreen() {
 
 
   function navigateToNewDevice() {
-    navigation.navigate('NewDevice')
+    navigation.navigate('NewDevice', { ambience })
   }
 
   function navigateToNewDeviceScenario() {
-    navigation.navigate('NewDeviceScenario')
+    navigation.navigate('NewDeviceScenario', { ambience })
   }
 
 
@@ -30,7 +48,7 @@ export default function AmbienceScreen() {
           <AntDesign name="left" size={22} color="#fff" />
         </ButtonComeBack>
       <Room source={defaultRoomImg} />
-      <Title>SALA DE ESTAR</Title>
+      <Title>{ambience.nome}</Title>
       </Header>
 
       <ButtonsAdd>
@@ -44,12 +62,11 @@ export default function AmbienceScreen() {
       </ButtonsAdd>
 
       <List keyboardShouldPersistTaps="handled"
-      data={[1,2, 3, 4, 5, 6, ,7, 8, 9, 10, 11, 12, 18]}
-      keyExtractor={item => String(item)}
+      data={devices}
+      keyExtractor={item => String(item.id)}
       renderItem={({ item }) =>  (
         <DeviceContainer>
-          <DeviceText>Google Alexa -  FAB GOOGLE</DeviceText>
-          <DeviceId>id: 46473</DeviceId>
+          <DeviceText>{item.nome} - {item.especificacao}   <DeviceId>id: {item.id}</DeviceId></DeviceText>
           <TrashButton>
             <EvilIcons name="trash" size={28} color="#fff"/>
           </TrashButton>

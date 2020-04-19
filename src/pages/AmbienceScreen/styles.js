@@ -72,6 +72,7 @@ export const DeviceText = styled.Text`
 
 export const DeviceId = styled.Text`
   color: #fff;
+  text-align: right;
 
 `;
 
@@ -88,4 +89,3 @@ export const ButtonComeBack = styled.TouchableOpacity`
 
 
 `;
-
