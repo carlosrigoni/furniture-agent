@@ -1,8 +1,8 @@
 import Realm from 'realm'
 
-import ProjectSchema from '../schemas/ProjectSchema'
-import AmbienceSchema from '../schemas/AmbienceSchema'
-import DeviceSchema from '../schemas/DeviceSchema'
+import ProjectSchema from '../Schemas/ProjectSchema'
+import AmbienceSchema from '../Schemas/AmbienceSchema'
+import DeviceSchema from '../Schemas/DeviceSchema'
 
 export default function getRealm() {
   return Realm.open({
