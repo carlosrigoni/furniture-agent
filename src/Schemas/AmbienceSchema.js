@@ -6,6 +6,7 @@ export default class AmbienceSchema {
       id: { type: 'int', indexed: true },
       projetoId: 'int',
       nome: 'string',
+      image: 'string',
     }
 
   }

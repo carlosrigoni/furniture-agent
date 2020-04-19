@@ -12,6 +12,8 @@ import { Container, Title, Header,ProjectContainer, ListHeader, ProjectText, Dat
 
 export default function ProjectScreen() {
   const [ambiences, setAmbiences] = useState([])
+  const [room, setRoom] = useState(defaultRoomImg)
+
 
   async function handleDeleteProject() {
     const realm = await getRealm()
@@ -28,6 +30,7 @@ export default function ProjectScreen() {
       const data = realm.objects('Ambiente').sorted('id', true).filtered(`projetoId = ${project.id}`)
 
       setAmbiences(data)
+      setRoom(data.image)
       console.log('here');
     }
     loadRepositories()
@@ -86,7 +89,7 @@ export default function ProjectScreen() {
       renderItem={({ item }) =>  (
         <RoomSpace onPress={() => navigateToAmbience(item)}>
           <TitleAmbience>{item.nome}</TitleAmbience>
-          <Room source={defaultRoomImg} />
+          <Room source={room} />
         </RoomSpace>
 
 

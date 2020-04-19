@@ -10,11 +10,13 @@ import defaultRoomImg from '../../assets/default-room.jpg'
 import { Container, ButtonComeBack, Title, Form, Input, Button, TextSubmit, ButtonGetImage, Room, TextImage } from './styles';
 
 export default function NewProject() {
+
   const route = useRoute()
   const projectId = route.params.projectId
 
   const [ID, setID] = useState()
   const [name, setName] = useState('')
+  const [room, setRoom] = useState(defaultRoomImg)
 
   const [error, setError] = useState(false)
 
@@ -29,7 +31,10 @@ export default function NewProject() {
       id: ID,
       projetoId: Number(projectId),
       nome: name,
+      image: room
     };
+
+
     console.log('aqui foi 22');
 
     const realm = await getRealm()
@@ -96,13 +101,15 @@ export default function NewProject() {
       else if (response.error) {
         console.log('ImagePicker Error: ', response.error);
       }
+      else if (!response.uri) {
+        console.log(`uri not found`);
+        return
+      }
       else {
-        const source = { uri: response.uri };
+        // const source = { uri: response.uri };
         // You can also display the image using data:
-        // const source = { uri: 'data:image/jpeg;base64,' + response.data };
-        this.setState({
-          avatarSource: source,
-        });
+        setRoom(response)
+        //  = { uri: 'data:image/jpeg;base64,' + response.data };
       }
     })
   }
@@ -125,8 +132,8 @@ export default function NewProject() {
         />
 
         <ButtonGetImage onPress={getImage}>
-          <Room source={defaultRoomImg} />
-          <TextImage>Abrir Camera</TextImage>
+          <Room source={room} />
+          <TextImage>Selecione uma imagem</TextImage>
         </ButtonGetImage>
 
         <Button onPress={handleAddRepository}>
