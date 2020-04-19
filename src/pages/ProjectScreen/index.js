@@ -13,11 +13,19 @@ import { Container, Title, Header,ProjectContainer, ListHeader, ProjectText, Dat
 export default function ProjectScreen() {
   const [ambiences, setAmbiences] = useState([])
 
+  async function handleDeleteProject() {
+    const realm = await getRealm()
+
+    realm.write(() => {
+      realm.delete(project);
+    })
+  }
+
   useEffect(() => {
     async function loadRepositories() {
       const realm = await getRealm()
 
-      const data = realm.objects('Ambiente').sorted('id', true)
+      const data = realm.objects('Ambiente').sorted('id', true).filtered(`projetoId = ${project.id}`)
 
       setAmbiences(data)
       console.log('here');
@@ -38,8 +46,8 @@ export default function ProjectScreen() {
     navigation.navigate('NewAmbience', { projectId })
   }
 
-  function navigateToAmbience() {
-    navigation.navigate('AmbienceScreen', )
+  function navigateToAmbience(ambience) {
+    navigation.navigate('AmbienceScreen', { ambience })
   }
 
   return (
@@ -65,7 +73,7 @@ export default function ProjectScreen() {
         <ProjectText>{project.nomeCliente}</ProjectText>
         <ListHeader>
         <ProjectText>{project.endereco}</ProjectText>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={handleDeleteProject}>
             <EvilIcons name="trash" size={28} color="#444"/>
           </TouchableOpacity>
         </ListHeader>
@@ -76,7 +84,7 @@ export default function ProjectScreen() {
       data={ambiences}
       keyExtractor={item => String(item.id)}
       renderItem={({ item }) =>  (
-        <RoomSpace onPress={navigateToAmbience}>
+        <RoomSpace onPress={() => navigateToAmbience(item)}>
           <TitleAmbience>{item.nome}</TitleAmbience>
           <Room source={defaultRoomImg} />
         </RoomSpace>
