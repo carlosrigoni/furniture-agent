@@ -1,52 +1,21 @@
 # :rocket: Scenario teste mobile
 
-![picture](./)
+![picture](https://bitbucket.org/danrigoni/scenario-mobile-teste/raw/8aa8481f08f3e88e52705a36d0cc92d9c4bd078a/.Screenshots/screenshots1.png)
+![picture](https://bitbucket.org/danrigoni/scenario-mobile-teste/raw/8aa8481f08f3e88e52705a36d0cc92d9c4bd078a/.Screenshots/screenshots2.png)
+![picture](https://bitbucket.org/danrigoni/scenario-mobile-teste/raw/8aa8481f08f3e88e52705a36d0cc92d9c4bd078a/.Screenshots/screenshots3.png)
 
-<p align="center">
-  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
-</p>
 
-<br>
+## :rocket: React Native é realmente nativo?
 
-<p align="center">
-  <img alt="BeTheHero" src=".github/bethehero.png" width="100%">
-</p>
 
-## :rocket: Tecnologias
+Sim! React Native é nativo mesmo. Funciona assim: dentro do seu dispositivo existem dois núcleos: um núcleo nativo (Java para Android e Objective-C para iOS) e um núcleo de Javascript, chamado JavaScriptCore — ou JSC, para os íntimos.
+Resumidamente, o RN compila um "aplicativo base", que é apenas um app simples com a função de executar seu código JavaScript no JavaScriptCore. Assim, o JavaScript "orquestra" os componentes nativos — a partir do núcleo JS — por meio de uma ponte ("bridge"). A comunicação é de via dupla.
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- [Node.js](https://nodejs.org/en/)
-- [React](https://reactjs.org)
-- [React Native](https://facebook.github.io/react-native/)
-- [Expo](https://expo.io/)
+## :rocket: Como instalar e executar
 
-## 💻 Projeto
-
-O BeTheHero é um projeto que visa conectar pessoas que desejam fazer contribuições monetárias a ONG's (Organizações não governamentais) que precisam de ajuda.
-
-## 🦸‍♂️ Qual a importância de ajudar uma ONG? <br>
-As organizações não governamentais <b>(ONGs)</b> são entidades privadas da sociedade civil, sem fins lucrativos, cujo propósito é defender e promover uma causa. Essa causa pode ser virtualmente de qualquer tipo: <b>direitos humanos</b>, <b>direitos animais</b>, <b>direitos indígenas</b>, <b>gênero</b>, <b>luta contra o racismo</b>, <b>meio ambiente</b>, <b>questões urbanas</b>, <b>imigrantes</b>, entre muitos outros.
-
-## 🔖 Layout
-
-Você pode visualizar o layout do projeto no formato através [desse link](https://www.figma.com/file/2C2yvw7jsCOGmaNUDftX9n/Be-The-Hero---OmniStack-11?node-id=37%3A394). Lembrando que você irá precisar ter uma conta no [Figma](http://figma.com/).
-
-## 🤔 Como contribuir
-
-- Faça um fork desse repositório;
-- Cria uma branch com a sua feature: `git checkout -b minha-feature`;
-- Faça commit das suas alterações: `git commit -m 'feat: Minha nova feature'`;
-- Faça push para a sua branch: `git push origin minha-feature`.
-
-Depois que o merge da sua pull request for feito, você pode deletar a sua branch.
-
-## :memo: Licença
-
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
-
----
+git clone https://danrigoni@bitbucket.org/danrigoni/scenario-mobile-teste.git
+cd scenario-mobile-teste
+yarn ou npm install
+abra o emulador android
+react-native run-android
