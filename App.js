@@ -4,7 +4,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'react-native'
 
 import AmbienceScreen from './src/pages/AmbienceScreen'
-import CameraScreen from './src/pages/CameraScreen'
 import HomeScreen from './src/pages/HomeScreen'
 import InfoScreen from './src/pages/InfoScreen'
 import NewAmbience from './src/pages/NewAmbience'
@@ -28,7 +27,6 @@ function App() {
         <Stack.Screen name="NewProject" component={NewProject} />
         <Stack.Screen name="ProjectScreen" component={ProjectScreen} />
         <Stack.Screen name="NewAmbience" component={NewAmbience} />
-        <Stack.Screen name="CameraScreen" component={CameraScreen} />
         <Stack.Screen name="AmbienceScreen" component={AmbienceScreen} />
         <Stack.Screen name="NewDevice" component={NewDevice} />
         <Stack.Screen name="NewDeviceScenario" component={NewDeviceScenario} />
