@@ -1,5 +1,5 @@
 ## :rocket: Tecnologias
- <img src="https://bitbucket.org/danrigoni/scenario-mobile-teste/src/master/.readme/10Screenshot_NewDevice.png" alt="" />
+ <img src="./.Screenshots/1Screenshot_HomeScreen.png" alt="" />
 
 ## :rocket: Tecnologias
 
