@@ -7,6 +7,7 @@ export default class ProjectSchema {
       nomeProjeto: 'string',
       nomeCliente: 'string',
       endereco: 'string',
+      dataAtualizacao: 'string'
     }
 
   }

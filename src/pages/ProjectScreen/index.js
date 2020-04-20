@@ -66,7 +66,7 @@ export default function ProjectScreen() {
       <ProjectContainer>
         <ListHeader>
           <ProjectText>{project.nomeProjeto}</ProjectText>
-          <Date>12/6/2020</Date>
+          <Date>{project.dataAtualizacao}</Date>
         </ListHeader>
 
         <ProjectText>{project.nomeCliente}</ProjectText>

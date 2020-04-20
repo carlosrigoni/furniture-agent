@@ -17,7 +17,7 @@ export default function HomeScreen() {
     async function loadRepositories() {
       const realm = await getRealm()
 
-      const data = realm.objects('Projeto').sorted('id', true)
+      const data = realm.objects('Projeto').sorted('dataAtualizacao', true)
 
       setProjects(data)
       console.log('here');
@@ -65,7 +65,7 @@ export default function HomeScreen() {
             <TouchableOpacity onPress={(() => navigateToProject(item))}>
                 <ListHeader>
                   <NameProject>{item.nomeProjeto}</NameProject>
-                  <Date>{item.id}</Date>
+                  <Date>{item.dataAtualizacao}</Date>
                 </ListHeader>
                 <NameCliente>{item.nomeCliente}</NameCliente>
                 <Address>{item.endereco}</Address>

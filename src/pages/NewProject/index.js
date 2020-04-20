@@ -20,13 +20,19 @@ export default function NewProject() {
     console.log('aqui foi 12');
 
     await setID(Math.floor(Math.random() * 100000))
-    console.log(ID);
+
+    var today = new Date();
+    var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear()
+
+
+    console.log(date);
 
     const data = {
       id: ID,
       nomeProjeto: nameProject,
       nomeCliente: nameCliente,
       endereco: adress,
+      dataAtualizacao: date
     };
     console.log('aqui foi 22');
 
