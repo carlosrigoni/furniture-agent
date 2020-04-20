@@ -14,8 +14,8 @@ Resumidamente, o RN compila um "aplicativo base", que é apenas um app simples c
 
 ## :rocket: Como instalar e executar
 
-git clone https://danrigoni@bitbucket.org/danrigoni/scenario-mobile-teste.git
-cd scenario-mobile-teste
-yarn ou npm install
-abra o emulador android
-react-native run-android
+---git clone https://danrigoni@bitbucket.org/danrigoni/scenario-mobile-teste.git
+--- cd scenario-mobile-teste
+--- yarn ou npm install
+--- abra o emulador android
+--- react-native run-android
