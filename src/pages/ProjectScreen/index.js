@@ -11,13 +11,24 @@ import { Container, Title, Header,ProjectContainer, ListHeader, ProjectText, Dat
 
 export default function ProjectScreen() {
   const [ambiences, setAmbiences] = useState([])
+  const navigation = useNavigation()
+  const route = useRoute()
+  const project = route.params.project
 
 
   async function handleDeleteProject() {
     const realm = await getRealm()
 
+    const data = realm.objects('Projeto').filtered(`id = ${project.id}`)
+
     realm.write(() => {
-      realm.delete(project);
+      try {
+        realm.delete(data);
+        navigateToHome()
+
+      } catch (error) {
+        console.log(error);
+      }
     })
   }
 
@@ -33,12 +44,10 @@ export default function ProjectScreen() {
   }, [route])
 
 
-  const navigation = useNavigation()
-  const route = useRoute()
-  const project = route.params.project
+
 
   function navigateToHome() {
-    navigation.navigate('HomeScreen')
+    navigation.navigate('HomeScreen', {})
   }
 
   function navigateToNewAmbience(projectId) {

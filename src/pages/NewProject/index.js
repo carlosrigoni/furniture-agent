@@ -78,7 +78,7 @@ export default function NewProject() {
   const navigation = useNavigation()
 
   function navigateToHome() {
-      navigation.navigate('HomeScreen')
+      navigation.navigate('HomeScreen', {})
     }
 
   return (
