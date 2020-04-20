@@ -20,7 +20,7 @@ export const ButtonComeBack = styled.TouchableOpacity`
 `;
 
 export const Title = styled.Text`
-  margin-top: 140px;
+  margin-top: 33%;
   text-align: center;
   font-size: 32px;
   color: #FFF;
