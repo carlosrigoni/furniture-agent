@@ -7,7 +7,7 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 import getRealm from '~/services/realm'
 
 
-import { Container, Title, Header,ProjectContainer, ListHeader, ProjectText, Date, List, TitleAmbience, Room, RoomSpace} from './styles';
+import { Container, Title, Header,ProjectContainer, ListHeader, ProjectText, Date, List, TitleAmbience, Room, RoomSpace, ListHeaderAmbience, DeleteAmbienceButton} from './styles';
 
 export default function ProjectScreen() {
   const [ambiences, setAmbiences] = useState([])
@@ -25,6 +25,22 @@ export default function ProjectScreen() {
       try {
         realm.delete(data);
         navigateToHome()
+
+      } catch (error) {
+        console.log(error);
+      }
+    })
+  }
+
+  async function handleDeleteAmbience(ambience) {
+    const realm = await getRealm()
+
+    const data = realm.objects('Ambiente').filtered(`id = ${ambience.id}`)
+
+    realm.write(() => {
+      try {
+        realm.delete(data);
+        navigation.navigate('ProjectScreen', {})
 
       } catch (error) {
         console.log(error);
@@ -93,7 +109,13 @@ export default function ProjectScreen() {
       keyExtractor={item => String(item.id)}
       renderItem={({ item }) =>  (
         <RoomSpace onPress={() => navigateToAmbience(item)}>
-          <TitleAmbience>{item.nome}</TitleAmbience>
+          <ListHeaderAmbience>
+            <TitleAmbience>{item.nome}</TitleAmbience>
+            <DeleteAmbienceButton onPress={() => handleDeleteAmbience(item)}>
+              <EvilIcons name="trash" size={24} color="#fff"/>
+            </DeleteAmbienceButton>
+
+          </ListHeaderAmbience>
           <Room source={{uri: item.image}} />
 
         </RoomSpace>

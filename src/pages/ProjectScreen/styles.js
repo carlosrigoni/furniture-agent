@@ -88,3 +88,14 @@ margin-top: 3px;
   border-radius: 4px;
 `;
 
+export const ListHeaderAmbience = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5px;
+  margin-right: 20px;
+`;
+
+export const DeleteAmbienceButton = styled.TouchableOpacity`
+  margin-top: 10px;
+`;
+
