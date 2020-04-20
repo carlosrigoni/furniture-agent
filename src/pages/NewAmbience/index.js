@@ -42,7 +42,7 @@ export default function NewProject() {
 
 
     realm.write(() => {
-      realm.create('Ambiente', data, 'modified')
+      realm.create('Ambiente', data, 'never')
     })
     console.log('aqui foi 42');
 

@@ -41,7 +41,7 @@ export default function NewProject() {
 
 
     realm.write(() => {
-      realm.create('Projeto', data, 'modified')
+      realm.create('Projeto', data, 'never')
     })
     console.log('aqui foi 42');
 
