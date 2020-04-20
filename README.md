@@ -1,5 +1,5 @@
 ## :rocket: Tecnologias
- <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=7159c1&labelColor=000000" alt="PRs welcome!" />
+ <img src="https://bitbucket.org/danrigoni/scenario-mobile-teste/src/master/.readme/10Screenshot_NewDevice.png" alt="" />
 
 ## :rocket: Tecnologias
 
