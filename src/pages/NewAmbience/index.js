@@ -31,7 +31,7 @@ export default function NewProject() {
       id: ID,
       projetoId: Number(projectId),
       nome: name,
-      image: room
+      image: room.uri
     };
 
 

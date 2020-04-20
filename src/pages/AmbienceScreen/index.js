@@ -47,7 +47,7 @@ export default function AmbienceScreen() {
       <ButtonComeBack onPress={navigateToProject}>
           <AntDesign name="left" size={22} color="#fff" />
         </ButtonComeBack>
-      <Room source={defaultRoomImg} />
+      <Room source={{uri: ambience.image}} />
       <Title>{ambience.nome}</Title>
       </Header>
 

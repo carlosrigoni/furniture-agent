@@ -4,7 +4,6 @@ import AntDesign from 'react-native-vector-icons/AntDesign'
 import Entypo from 'react-native-vector-icons/Entypo'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
 import { useNavigation, useRoute } from '@react-navigation/native'
-import defaultRoomImg from '../../assets/default-room.jpg'
 import getRealm from '~/services/realm'
 
 
@@ -12,7 +11,6 @@ import { Container, Title, Header,ProjectContainer, ListHeader, ProjectText, Dat
 
 export default function ProjectScreen() {
   const [ambiences, setAmbiences] = useState([])
-  const [room, setRoom] = useState(defaultRoomImg)
 
 
   async function handleDeleteProject() {
@@ -30,8 +28,6 @@ export default function ProjectScreen() {
       const data = realm.objects('Ambiente').sorted('id', true).filtered(`projetoId = ${project.id}`)
 
       setAmbiences(data)
-      setRoom(data.image)
-      console.log('here');
     }
     loadRepositories()
   }, [route])
@@ -89,7 +85,8 @@ export default function ProjectScreen() {
       renderItem={({ item }) =>  (
         <RoomSpace onPress={() => navigateToAmbience(item)}>
           <TitleAmbience>{item.nome}</TitleAmbience>
-          <Room source={room} />
+          <Room source={{uri: item.image}} />
+
         </RoomSpace>
 
 
