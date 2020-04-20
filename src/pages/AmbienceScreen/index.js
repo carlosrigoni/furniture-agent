@@ -40,6 +40,22 @@ export default function AmbienceScreen() {
     navigation.navigate('NewDeviceScenario', { ambience })
   }
 
+  async function handleDeleteDevice(device) {
+    const realm = await getRealm()
+
+    const data = realm.objects('Device').filtered(`id = ${device.id}`)
+
+    realm.write(() => {
+      try {
+        realm.delete(data);
+        navigation.navigate('AmbienceScreen', {})
+
+      } catch (error) {
+        console.log(error);
+      }
+    })
+  }
+
 
   return (
     <Container>
@@ -67,7 +83,7 @@ export default function AmbienceScreen() {
       renderItem={({ item }) =>  (
         <DeviceContainer>
           <DeviceText>{item.nome} - {item.especificacao}   <DeviceId>id: {item.id}</DeviceId></DeviceText>
-          <TrashButton>
+          <TrashButton onPress={() => handleDeleteDevice(item)}>
             <EvilIcons name="trash" size={28} color="#fff"/>
           </TrashButton>
         </DeviceContainer>
