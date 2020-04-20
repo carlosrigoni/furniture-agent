@@ -1,30 +1,5 @@
-<h1 align="center">
-    <img alt="DevRadar" title="#delicinha" src=".github/bethehero.svg" width="200px" />
-</h1>
-
-<h4 align="center">
- <b>Seja um verdadeiro Heroi!</b> 🦸‍♂️
-</h4>
-
-<p align="center">
+## :rocket: Tecnologias
  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=7159c1&labelColor=000000" alt="PRs welcome!" />
-
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=7159c1&labelColor=000000">
-</p>
-
-<p align="center">
-  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-como-contribuir">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
-</p>
-
-<br>
-
-<p align="center">
-  <img alt="BeTheHero" src=".github/bethehero.png" width="100%">
-</p>
 
 ## :rocket: Tecnologias
 
