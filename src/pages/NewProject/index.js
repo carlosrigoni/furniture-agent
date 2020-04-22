@@ -17,7 +17,6 @@ export default function NewProject() {
   const [error, setError] = useState(false)
 
   async function saveRepository() {
-    console.log('aqui foi 12');
 
     await setID(Math.floor(Math.random() * 100000))
 
@@ -25,7 +24,6 @@ export default function NewProject() {
     var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear()
 
 
-    console.log(date);
 
     const data = {
       id: ID,
@@ -34,16 +32,13 @@ export default function NewProject() {
       endereco: adress,
       dataAtualizacao: date
     };
-    console.log('aqui foi 22');
 
     const realm = await getRealm()
-    console.log('aqui foi 32');
 
 
     realm.write(() => {
       realm.create('Projeto', data, 'never')
     })
-    console.log('aqui foi 42');
 
 
     return data
@@ -54,17 +49,12 @@ export default function NewProject() {
       if (nameProject === '' || nameCliente === '' || adress === '') {
         setError(true)
       } else {
-        console.log('aqui foi 1');
         await saveRepository()
-        console.log('aqui foi 2');
         setNameProject('')
         setNameCliente('')
         setAdress('')
-        console.log('aqui foi 3');
         setError(false)
-        console.log('aqui foi 4');
         Keyboard.dismiss()
-        console.log('deu certinho');
         navigateToHome()
       }
 

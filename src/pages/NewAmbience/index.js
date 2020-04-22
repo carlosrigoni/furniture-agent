@@ -22,7 +22,6 @@ export default function NewProject() {
 
   // data base
   async function saveRepository() {
-    console.log('aqui foi 12');
 
     setID(Math.floor(Math.random() * 100000))
     console.log(ID);
@@ -35,16 +34,13 @@ export default function NewProject() {
     };
 
 
-    console.log('aqui foi 22');
 
     const realm = await getRealm()
-    console.log('aqui foi 32');
 
 
     realm.write(() => {
       realm.create('Ambiente', data, 'never')
     })
-    console.log('aqui foi 42');
 
 
     return data
@@ -55,16 +51,11 @@ export default function NewProject() {
       if (name === '') {
         setError(true)
       } else {
-        console.log('aqui foi 1');
         await saveRepository()
-        console.log('aqui foi 2');
         setName('')
-        console.log('aqui foi 3');
         setError(false)
-        console.log('aqui foi 4');
         Keyboard.dismiss()
         navigateToProjectRegistred()
-        console.log('deu certinho');
       }
 
     } catch (err) {
@@ -94,7 +85,6 @@ export default function NewProject() {
 
   function getImage() {
     ImagePicker.showImagePicker(options, (response) => {
-      console.log('Response = ', response);
       if (response.didCancel) {
         console.log('User cancelled image picker');
       }

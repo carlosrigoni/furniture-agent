@@ -20,7 +20,6 @@ export default function HomeScreen() {
       const data = realm.objects('Projeto').sorted('dataAtualizacao', true)
 
       setProjects(data)
-      console.log('here');
     }
     loadRepositories()
   }, [route])

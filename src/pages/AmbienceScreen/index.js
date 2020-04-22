@@ -20,7 +20,6 @@ export default function AmbienceScreen() {
       const data = realm.objects('Device').sorted('id', true).filtered(`ambienceId = ${ambience.id}`)
 
       setDevices(data)
-      console.log('here');
     }
     loadRepositories()
   }, [route])
