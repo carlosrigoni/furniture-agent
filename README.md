@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="furnitureAgent" title="#furniture agent" src="./github/Screenshot-mains.png" width="500px" />
+    <img alt="furnitureAgent" title="#furniture agent" src="./github/Screenshot-mains.png" width="700px" />
 </h1>
 
 <h4 align="center">
@@ -39,9 +39,9 @@ Furniture Agent é um projeto que visa facilitar a organização de ambientes e 
 
 ## 🔖 Layout
 
-<img alt="furnitureAgent" src="./github/Screenshot-mains.png" width="300px" />
-<img alt="furnitureAgent" src="./github/Screenshot-mains.png" width="300px" />
-<img alt="furnitureAgent" src="./github/Screenshot-mains.png" width="300px" />
+<img alt="furnitureAgent" src="./github/screenshots1.png" width="400px" />
+<img alt="furnitureAgent" src="./github/screenshots2.png" width="400px" />
+<img alt="furnitureAgent" src="./github/screenshots3.png" width="400px" />
 
 ## 🤔 Como contribuir
 
