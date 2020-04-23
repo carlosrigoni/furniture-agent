@@ -1,7 +1,3 @@
-<h1 align="center">
-    <img alt="furnitureAgent" title="#furniture agent" src="./github/Screenshot-mains.png" width="700px" />
-</h1>
-
 <h4 align="center">
  <b>Organize os ambientes</b> 🦸‍♂️
 </h4>
@@ -22,9 +18,9 @@
 
 <br>
 
-<p align="center">
-  <img alt="BeTheHero" src=".github/bethehero.png" width="100%">
-</p>
+<h1 align="center">
+    <img alt="furnitureAgent" title="#furniture agent" src="./github/Screenshot-mains.png" width="700px" />
+</h1>
 
 ## :rocket: Tecnologias
 
